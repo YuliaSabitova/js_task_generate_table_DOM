@@ -357,10 +357,11 @@ const people = [
 // eslint-disable-next-line no-console
 console.log(people); // you can remove it
 
-const table = document.querySelector('.dashboard');
-
 people.forEach((person) => {
   const row = document.createElement('tr');
+  const table = document.querySelector('.dashboard');
+
+  table.appendChild(row);
 
   const nameCell = document.createElement('td');
 
@@ -388,6 +389,4 @@ people.forEach((person) => {
   centuryCell.textContent = Math.ceil(person.died / 100);
 
   row.append(nameCell, genderCell, bornCell, diedCell, ageCell, centuryCell);
-
-  table.appendChild(row);
 });
